@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>me.syrym.DrtLanguage</id>
+    <name>Drools drt</name>
+    <vendor email="syrym.tussupbekov@gmail.com"/>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Drools Drt" implementationClass="me.syrym.DrtFileType"
+                  fieldName="INSTANCE" language="Drt" extensions="drt"/>
+        <fileTypeFactory implementation="me.syrym.DrtFileTypeFactory"/>
+        <lang.parserDefinition language="Drt"
+                               implementationClass="me.syrym.language.DrtParserDefinition"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

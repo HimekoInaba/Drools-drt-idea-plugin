@@ -1,0 +1,22 @@
+{
+  parserClass="me.syrym.language.parser.DrtParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Drools"
+  psiImplClassSuffix="Impl"
+  psiPackage="me.syrym.language.psi"
+  psiImplPackage="me.syrym.language.psi.impl"
+
+  elementTypeHolderClass="me.syrym.language.psi.DrtTypes"
+  elementTypeClass="me.syrym.language.psi.DrtElementType"
+  tokenTypeClass="me.syrym.language.psi.DrtTokenType"
+
+  psiImplUtilClass="me.syrym.language.psi.impl.DrtPsiImplUtil"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
